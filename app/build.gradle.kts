@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("kotlin-parcelize")
 }
 
 android {
@@ -15,6 +16,10 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+    //ViewBinding
+    buildFeatures {
+        viewBinding = true
     }
 
     buildTypes {
@@ -35,6 +40,7 @@ android {
     }
 }
 
+
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -49,6 +55,14 @@ dependencies {
 
     // Corrutinas
     implementation(libs.corrutinas)
+
+    //Coil
+    implementation(libs.coil)
+
+    //fragment
+    implementation(libs.fragment)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
